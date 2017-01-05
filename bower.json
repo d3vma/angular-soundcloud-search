@@ -1,0 +1,21 @@
+{
+  "name": "angular-soundcloud-search",
+  "homepage": "https://github.com/d3vma/angular-soundcloud-search",
+  "authors": [
+    "Adel <mh4md.a@gmail.com>"
+  ],
+  "description": "AngularJS 1.x for Soundcloud API search",
+  "dependencies": {
+    "angular": "1.4.9",
+    "bootstrap": "^3.3.6"
+  },
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
