@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Souncloud AngularJS</title>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+    </head>
+    <body ng-app="soundcloudSearch" ng-controller="mainCtrl">
+        <div class="container">
+            <div class="form-group">
+                <h1>Soundcloud search music AngularJs</h1>
+            </div>
+
+            <div class="form-group">
+                <form class='form-inline'>
+                    <input class='form-control' type="search" value="" ng-model="seach_input" ng-keypress="($event.which === 90)?search():0" placeholder='ex: adele'/>
+                    <button class="btn btn-success" ng-click="search()">Search</button>
+                </form>
+            </div>
+
+            <div class="form-group">
+                <table class='table table-hover'>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Duration</th>
+                            <th>Genre</th>
+                            <th>Art work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="track in tracks">
+                            <td><a href="{{track.permalink_url}}" target="_blank">{{track.title}}</a></td>
+                            <td><a href="{{track.user.permalink_url}}">{{track.user.username}}</a></td>
+                            <td>{{track.duration}}</td>
+                            <td>{{track.genre}}</td>
+                            <td>
+                                <img src="{{track.artwork_url}}" class="img-responsive">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controller.js"></script>
+    </body>
+</html>
