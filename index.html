@@ -34,7 +34,7 @@
                         <tr ng-repeat="track in tracks">
                             <td><a href="{{track.permalink_url}}" target="_blank">{{track.title}}</a></td>
                             <td><a href="{{track.user.permalink_url}}">{{track.user.username}}</a></td>
-                            <td>{{track.duration}}</td>
+                            <td>{{track.duration | durationMins}}</td>
                             <td>{{track.genre}}</td>
                             <td>
                                 <img src="{{track.artwork_url}}" class="img-responsive">
